@@ -1,0 +1,46 @@
+<!-- <body  -->
+<!-- background="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQMHK3Apc7JfKVVD6g5D3Tqcu_gsU6bqQIOuMkPZYq_LTCEqmxoup8pIlaclNNN4TbYhLo&usqp=CAU" style="background-size:cover ;"> -->
+<body background="https://img.freepik.com/free-vector/network-mesh-wire-digital-technology-background_1017-27428.jpg?w=900&t=st=1671087298~exp=1671087898~hmac=42b5e2ead4e969303f099a779dd2a16a62aee3fda55065fa876e4d1126afaa14" style="background-size:cover ;"> 
+    <header style="background-color:mediumslateblue;position:fixed;width: 100%;height: 70px;text-align : center;
+    top: 0;">
+      <div class="inline form" style="text-align:right">
+          <p style="text-align:center; font-size:20px;">Member Registration Portal<p>
+            <button class="btn btn-info" mat-button color="danger">Courses</button>
+            <button class="btn btn-info" mat-button color="danger">Webinars</button>
+          </div>
+    </header>
+    <br><br><br>
+    <br><br><br>
+    
+    <div class = "Simple example" style="text-align:center ;">  
+      <mat-form-field appearance = "fill">  
+        <mat-label> Enter Name </mat-label>  
+        <input matInput [(ngModel)]="loginOb.username">  
+      </mat-form-field>  
+      <br>  
+      <mat-form-field appearance = "fill">  
+        <mat-label> Enter Password </mat-label>  
+        <input type="password" matInput [(ngModel)]="loginOb.password">  
+      </mat-form-field>  
+      <br>  
+      <br>
+      <button (click)=checkLogin(loginOb.username) class="btn btn-success" mat-raised-button color="primary">
+        Login
+      </button>
+      <br>
+        <br><br>
+        <div style="text-align:center ;"><p>Not an user? Please register first</p>
+          <!-- <a href="http://localhost:4200/registration" class="navbar-brand">Register</a> -->
+          <a href="http://2235555deployui.s3-website-us-west-2.amazonaws.com/registration" class="navbar-brand">Register</a>
+        </div>
+      </div>
+    
+    </body>
+      
+    
+      
+    
+    
+      
+    
+    

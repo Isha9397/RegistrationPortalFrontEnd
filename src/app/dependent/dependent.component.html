@@ -1,0 +1,114 @@
+<body
+    background="https://img.freepik.com/free-vector/network-mesh-wire-digital-technology-background_1017-27428.jpg?w=900&t=st=1671087298~exp=1671087898~hmac=42b5e2ead4e969303f099a779dd2a16a62aee3fda55065fa876e4d1126afaa14"
+    style="background-size:cover ; height: 100%;">
+    <header
+        style="background-color:mediumslateblue;position:absolute;width: 100%;height: 70px;text-align : center;top: 0;">
+        <div class="inline form" style="text-align:right; top: 50%;">
+            <p style="text-align:center; font-size:20px;">Member Registration Portal
+            <p>
+                <button class="btn btn-info" mat-button color="danger">Courses</button>
+                <button class="btn btn-info" mat-button color="danger">Webinars</button>
+                <button class="btn btn-info" (click)="goToLogout()" mat-button color="danger">LogOut</button>
+        </div>
+    </header>
+
+    <br><br><br>
+
+    <head>
+        <style>
+            table,
+            th,
+            td {
+                border: 1px solid black;
+                border-collapse: collapse;
+                margin-left: auto;
+                margin-right: auto;
+            }
+        </style>
+    </head>
+
+    <br>
+    <div class="Simple example" style="text-align:center ;">
+        <form [formGroup]="dependentForm">
+        <mat-form-field appearance="fill">
+            <mat-label> Enter Contact </mat-label>
+            <input matInput formControlName="contact" name="contact" [(ngModel)]="dependentObj.contact" required pattern="^(?=.*[0-9]).{11}$">
+        <mat-error *ngIf="dependentForm.value.contact">Contact must be 11 digits long</mat-error>
+        </mat-form-field>
+        <br>
+        <mat-form-field appearance="fill">
+            <mat-label> Enter EmailId </mat-label>
+            <!-- <input type="text" matInput [(ngModel)]="dependentObj.emailId"> -->
+            <input matInput formControlName="emailId" name="emailId" [(ngModel)]="dependentObj.emailId" required pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,}$">
+        <mat-error *ngIf="dependentForm.value.emailId">Enter valid email Id</mat-error>
+        </mat-form-field>
+        <br>
+        <!-- <mat-form-field appearance="fill">
+            <mat-label> Enter Member Id </mat-label>
+            <!-- <input type="text" matInput [(ngModel)]="dependentObj.member_id_fk"> -->
+            <!-- <input matInput formControlName="member_id_fk" name="member_id_fk" [(ngModel)]="dependentObj.member_id_fk" required>
+        </mat-form-field>  -->
+        <mat-form-field appearance="fill">
+            <mat-label> Enter Date Of Birth </mat-label>
+            <!-- <input type="text" matInput [(ngModel)]="dependentObj.dependentDOB"> -->
+            <input matInput formControlName="dependentDOB" name="dependentDOB" [(ngModel)]="dependentObj.dependentDOB" required>
+        </mat-form-field>
+        <br>
+        <button (click)=addDependent() class="btn btn-success" mat-raised-button color="primary" [disabled]="!dependentForm.valid">
+            Add Dependent
+        </button>
+    </form>
+        <br>
+        <br><br>
+    </div>
+
+    <br>
+    <br>
+
+    <div class="container p-5" style="text-align:center">
+        <table class="table table-striped table-bordered table-sm row-border hover" id="tblMain3" style="width: 1200px;">
+            <thead>
+                <tr>
+                    <th><span>Contact</span></th>
+                    <th><span>Email Id</span></th>
+                    <!-- <th><span>Member Id</span></th> -->
+                    <th><span>Date Of Birth</span></th>
+                </tr>
+            </thead>
+            <tbody>
+                <ng-container *ngFor="let item of dependentData">
+                    <tr>
+                        <td style="font-weight:bold"><span>{{item.contact}}</span></td>
+                        <td style="font-weight:bold"><span>{{item.emailId}}</span></td>
+                        <!-- <td style="font-weight:bold"><span>{{item.member_id_fk}}</span></td> -->
+                        <td style="font-weight:bold"><span>{{item.dependentDOB}}</span></td>
+                        <!-- <td><button (click)=goToUpdateDependent(item) class="btn btn-success" mat-raised-button color="primary">
+                            Update Dependent
+                        </button></td> -->
+                        <td><button (click)=goToUpdateDependent(item.member_id_fk) class="btn btn-success" mat-raised-button color="primary">
+                            Update Dependent
+                        </button></td>
+                        <!-- <td><button (click)=updateDependentDetails(item.member_id_fk,item) class="btn btn-success" mat-raised-button color="primary">
+                            Update Here
+                        </button></td> -->
+                    </tr>
+                </ng-container>
+            </tbody>
+        </table>
+    </div>
+
+    <br><br>
+
+    <br><br>
+
+    <br><br>
+    <!-- <footer class="page-footer font-small blue"
+        style="background-color:black;width:100%;height: 60px;text-align : center; ">
+        <div class="footer-copyright text-center py-3">
+            <p style="text-align:center; font-size:15px; top: 50%; color: azure;">Learn Stock Market, Trading and
+                Investment for free!
+            <p></p>
+            <a href="/" style="color:white ;"> Traders.com</a>
+        </div>
+    </footer> -->
+</body>

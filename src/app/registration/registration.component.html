@@ -1,0 +1,155 @@
+<body
+  background="https://img.freepik.com/free-vector/network-mesh-wire-digital-technology-background_1017-27428.jpg?w=900&t=st=1671087298~exp=1671087898~hmac=42b5e2ead4e969303f099a779dd2a16a62aee3fda55065fa876e4d1126afaa14"
+  style="background-size:cover ;overflow-x: scroll;">
+  <header style="background-color:mediumslateblue;position:fixed;width: 100%;height: 70px;text-align : center;
+    top: 0;">
+    <div class="inline form" style="text-align:right">
+      <p style="text-align:center; font-size:20px; vertical-align: middle;">Member Registration Portal
+      <p>
+        <button class="btn btn-info" mat-button color="danger">Courses</button>
+        <button class="btn btn-info" mat-button color="danger">Webinars</button>
+    </div>
+    <!-- </nav>  -->
+  </header>
+  <br><br><br>
+
+  <!-- <div class = "Simple example" style="text-align:center ;">  
+        <mat-form-field appearance = "fill" >  
+          <mat-label> Enter Name </mat-label>  
+          <input matInput [(ngModel)]="register.username">  
+        </mat-form-field>  
+        <br>  
+        <mat-form-field appearance = "fill">  
+          <mat-label> Enter Password </mat-label>  
+          <input type="password" matInput [(ngModel)]="register.password">  
+        </mat-form-field>  
+        <br>  
+        <mat-form-field appearance = "fill">  
+            <mat-label> Enter Contact Number </mat-label>  
+            <input matInput [(ngModel)]="register.contact">  
+        </mat-form-field>  
+        <br>
+        <mat-form-field appearance = "fill">  
+            <mat-label> Enter EmailId </mat-label>  
+            <input matInput [(ngModel)]="register.emailId">  
+        </mat-form-field> 
+        <br>
+        <mat-form-field appearance = "fill">  
+            <mat-label> Enter PAN Number </mat-label>  
+            <input matInput [(ngModel)]="register.panNumber">  
+        </mat-form-field> 
+        <br>
+        <mat-form-field appearance = "fill">  
+            <mat-label> Enter Date Of Birth </mat-label>  
+            <input matInput [(ngModel)]="register.dateOfBirth">  
+        </mat-form-field> 
+        <br>
+        <mat-form-field appearance = "fill">  
+            <mat-label> Enter Address </mat-label>  
+            <input matInput [(ngModel)]="register.address">  
+        </mat-form-field> 
+        <br>
+        <mat-form-field appearance = "fill">  
+            <mat-label> Enter State </mat-label>  
+            <input matInput [(ngModel)]="register.state">  
+        </mat-form-field> 
+        <br>
+        <mat-form-field appearance = "fill">  
+            <mat-label> Enter Country </mat-label>  
+            <input matInput [(ngModel)]="register.country">  
+        </mat-form-field> 
+        <br>
+        <mat-form-field appearance = "fill">  
+            <mat-label> Enter Dependent Name </mat-label>  
+            <input matInput [(ngModel)]="register.dependentName">  
+        </mat-form-field> 
+        <br>
+        <button (click)=registerMember() class="btn btn-success" mat-raised-button color="primary">
+          Register
+        </button>
+        </div> -->
+<br><br>
+  <div class="Simple example" style="text-align:center ;">
+    <form [formGroup]="registerForm">
+      <mat-form-field appearance="fill">
+        <mat-label> Enter Name </mat-label>
+        <!-- <input type="text" matInput [(ngModel)]="dependentObj.contact"> -->
+        <input matInput formControlName="username" name="username" [(ngModel)]="register.username" required pattern="^(?=.*[A-Z])(?=.*[a-z]).{1,}$">
+        <mat-error *ngIf="registerForm.value.username">UserName must contain small and capitalletters</mat-error>
+      </mat-form-field>
+      <br>
+      <mat-form-field appearance="fill">
+        <mat-label> Enter Password </mat-label>
+        <!-- <input type="text" matInput [(ngModel)]="dependentObj.emailId"> -->
+        <input matInput formControlName="password" name="password" [(ngModel)]="register.password" type="password" required pattern="^(?=.*[A-Z])(?=.*[0-9])(?=.*[a-z]).{5,}$">
+        <mat-error *ngIf="registerForm.value.password">Password must be a combination of lower-case, upper-case, numbers and at least 5 characters long</mat-error>
+      </mat-form-field>
+      <br>
+      <mat-form-field appearance="fill">
+        <mat-label> Enter contact </mat-label>
+        <!-- <input type="text" matInput [(ngModel)]="dependentObj.dependentDOB"> -->
+        <input matInput formControlName="contact" name="contact" [(ngModel)]="register.contact" required pattern="^(?=.*[0-9]).{11}$">
+        <mat-error *ngIf="registerForm.value.contact">Contact must be 11 digits long</mat-error>
+      </mat-form-field>
+      <br>
+      <mat-form-field appearance="fill">
+        <mat-label> Enter emailId </mat-label>
+        <input matInput formControlName="emailId" name="emailId" [(ngModel)]="register.emailId" required pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,}$">
+        <mat-error *ngIf="registerForm.value.emailId">Enter valid email Id</mat-error>
+      </mat-form-field>
+      <br>
+      <mat-form-field appearance="fill">
+        <mat-label> Enter panNumber </mat-label>
+        <!-- <input type="text" matInput [(ngModel)]="dependentObj.member_id_fk"> -->
+        <input matInput formControlName="panNumber" name="panNumber" [(ngModel)]="register.panNumber" required pattern="^(?=.*[A-Z])(?=.*[0-9])(?=.*[a-z]).{12}$">
+        <mat-error *ngIf="registerForm.value.panNumber">Pan Number must be a combination of lower-case, upper-case, numbers and at 12 characters long</mat-error>
+      </mat-form-field>
+      <br>
+      <mat-form-field appearance="fill">
+        <mat-label> Enter dateOfBirth </mat-label>
+        <!-- <input type="text" matInput [(ngModel)]="dependentObj.member_id_fk"> -->
+        <input matInput formControlName="dateOfBirth" name="dateOfBirth" [(ngModel)]="register.dateOfBirth" required>
+      </mat-form-field>
+      <br>
+      <mat-form-field appearance="fill">
+        <mat-label> Enter address </mat-label>
+        <!-- <input type="text" matInput [(ngModel)]="dependentObj.member_id_fk"> -->
+        <input matInput formControlName="address" name="address" [(ngModel)]="register.address" required>
+      </mat-form-field>
+      <br>
+      <mat-form-field appearance="fill">
+        <mat-label> Enter state </mat-label>
+        <!-- <input type="text" matInput [(ngModel)]="dependentObj.member_id_fk"> -->
+        <input matInput formControlName="state" name="state" [(ngModel)]="register.state" required>
+      </mat-form-field>
+      <br>
+      <mat-form-field appearance="fill">
+        <mat-label> Enter country </mat-label>
+        <!-- <input type="text" matInput [(ngModel)]="dependentObj.member_id_fk"> -->
+        <input matInput formControlName="country" name="country" [(ngModel)]="register.country" required>
+      </mat-form-field>
+      <br>
+      <mat-form-field appearance="fill">
+        <mat-label> Enter dependentName </mat-label>
+        <!-- <input type="text" matInput [(ngModel)]="dependentObj.member_id_fk"> -->
+        <input matInput formControlName="dependentName" name="dependentName" [(ngModel)]="register.dependentName"
+          required>
+      </mat-form-field>
+      <br>
+      <!-- <mat-form-field appearance="fill">
+        <mat-label> Enter dependentDOB </mat-label>
+        <!-- <input type="text" matInput [(ngModel)]="dependentObj.member_id_fk"> -->
+        <!-- <input matInput formControlName="dependentDOB" name="dependentDOB" [(ngModel)]="register.dependentDOB" required>
+      </mat-form-field> -->
+      <br>
+      <button (click)=registerMember() class="btn btn-success" mat-raised-button color="primary"
+        [disabled]="!registerForm.valid">
+        Register
+      </button>
+
+      <br>
+      <br><br>
+    </form>
+  </div>
+
+</body>

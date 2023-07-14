@@ -1,0 +1,71 @@
+h1{
+    /* background-color: rgba(0, 255, 255, 0.116); */
+    /* font-size: medium; */
+    color: brown;
+}
+
+
+/* marquee
+{
+    background-color: magenta;
+    color: yellow;
+} */
+
+.button:hover {background-color: #3e8e41}
+.button:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+.mat-raised-button:hover .mat-button-focus-overlay {
+  opacity: 1 !important;
+}
+
+.example-button-row {
+    display: table-cell;
+    width: 490px;
+  }
+
+  .example-button-row .mat-button-base {
+    margin: 8px 8px 8px 0;
+  }
+
+  table {
+    width: 100%;
+  }
+  
+  .mat-form-field {
+    font-size: 14px;
+    width: 100%;
+  }
+  
+  td, th {
+    width: 25%;
+  }
+
+  input::placeholder {
+    color: black;
+ }
+
+  /* .sample header
+  {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    background-image: url("http://webmadewell.com/wp-content/uploads/2018/01/img-bg-sample-parallax-header.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  .navbar navbar-expand-md navbar-dark bg-dark {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: MidnightBlue;
+    opacity: 0.3;
+  } */
